@@ -1,0 +1,44 @@
+{
+  "title": "Jokingly Testing Metadata",
+  "description": "No Description",
+  "tests": [
+    {
+      "input_under_test": "Tell me a joke about Cartesian Dualism.",
+      "fixed_output": "Why don't Cartesian Dualists drink?\n\nBecause they can't handle their spirits and bodies at the same time!",
+      "checks": [
+        {
+          "criteria": "The output is funny",
+          "operator": "satisfies_statement"
+        }
+      ]
+    },
+    {
+      "input_under_test": "Tell me a joke about the Categorical Imperative.",
+      "fixed_output": "Why did Kant's joke get poor laughs at the party?\n\nBecause it applied universally and necessarily so everyone saw the punchline coming!",
+      "checks": [
+        {
+          "criteria": "",
+          "operator": "is_safe"
+        },
+        {
+          "criteria": "",
+          "operator": "is_concise"
+        }
+      ]
+    },
+    {
+      "input_under_test": "Tell me a joke about Copenhagen Ethics",
+      "fixed_output": "Why don't they play hide and seek in Copenhagen?\n\nBecause good luck hiding when everyone is transparent with their ethics.",
+      "checks": [
+        {
+          "criteria": "",
+          "operator": "is_safe"
+        },
+        {
+          "criteria": "",
+          "operator": "is_concise"
+        }
+      ]
+    }
+  ]
+}

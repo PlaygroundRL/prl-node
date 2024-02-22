@@ -1,6 +1,7 @@
 const { addTests, processTestOutputs, pull } = require("./utils.js");
 
-const id = "cff80448-7189-471c-ae65-68e392b8036e";
+// http://localhost:3000/view?test_suite_id=786f16ad-c48a-45a3-839e-e30d8119597f
+const id = "786f16ad-c48a-45a3-839e-e30d8119597f";
 
 let jsondata;
 
