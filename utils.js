@@ -12,7 +12,7 @@ import("inquirer")
 const fs = require("fs/promises"); // For promise-based operations
 const fsNonPromise = require("fs");
 const path = require("path");
-const { login, getAuthToken } = require("./index");
+const { login, getAuthToken } = require("./auth");
 const { queryOpenAIGPT4 } = require("./query");
 const ProgressBar = require("progress");
 
@@ -368,17 +368,16 @@ async function addTests(data, files, suiteId) {
   return response;
 }
 
-const id = "cff80448-7189-471c-ae65-68e392b8036e";
-
-let jsondata;
-
-(async () => {
-  jsondata = await processTestOutputs(await pull(id));
-  //   uploadFile(id, "temp.json").then((data) => {
-  //     console.log("File uploaded with id:", data);
-  //   });
-
-  addTests(jsondata, { "temp.json": "temp.json" }, id).then((data) => {
-    console.log("Tests added:", data);
-  });
-})();
+module.exports = {
+  addTests,
+  uploadFile,
+  processTestOutputs,
+  pull,
+  getCSV,
+  listTestSuites,
+  getGraphQLClient,
+  beHost,
+  feHost,
+  getRegion,
+  getAuthToken,
+};
