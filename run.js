@@ -30,7 +30,7 @@ async function _run(run_config, suiteid, metadata_map = null) {
       headers: { Authorization: getAuthToken() },
     });
 
-    if (response.status_code === 200) {
+    if (response.status === 200) {
       const run_id = response.data.run_id;
       return `${feHost()}/results?run_id=${run_id}`;
     } else {

@@ -47,23 +47,21 @@ async function runEvaluations(
   }
 
   // update the test suite
-  addTests(testList, {}, suiteId).then((data) => {
-    console.log("Tests added", data);
-  });
+  addTests(testList, {}, suiteId).then(async (data) => {
+    console.log("Successfully added tests to suite!");
 
-  // Run isn't quite working yet
-  /*
-  run_url = _run(
-    {
-      use_fixed_output: true,
-      description: description,
-      maximum_threads: maximumThreads,
-      //   model_under_test: modelUnderTest,
-    },
-    suiteId,
-    {}
-  );
-  */
+    // submit a run for the updated test suite
+    run_url = await _run(
+      {
+        use_fixed_output: true,
+        description: description,
+        maximum_threads: maximumThreads,
+        model_under_test: modelUnderTest,
+      },
+      suiteId
+    );
+    console.log("Run URL", run_url);
+  });
 }
 
 module.exports = {
